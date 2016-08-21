@@ -16,6 +16,7 @@ fi
 if [[ $os == "Darwin" ]]; then
     brew install tmux
     brew install zsh
+    brew install coreutils
 fi
 
 #tmux setup
