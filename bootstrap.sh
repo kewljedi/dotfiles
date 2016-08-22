@@ -8,6 +8,10 @@ os=$(uname -s)
 echo "${green}Bootstraping for"
 echo ${red}$os
 echo "${green}Installing packages${reset}"
+
+git submodule init
+git submodule update
+
 if [[ $os == "Linux" ]]; then
     sudo apt-get -y install tmux
     sudo apt-get -y install zsh
