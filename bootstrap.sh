@@ -8,8 +8,15 @@ os=$(uname -s)
 echo "${green}Bootstraping for"
 echo ${red}$os
 echo "${green}Installing packages${reset}"
+
+git submodule init
+git submodule update
+
 if [[ $os == "Linux" ]]; then
+    sudo add-apt-repository -y ppa:pi-rho/dev
+    sudo apt-get update
     sudo apt-get -y install tmux
+    
     sudo apt-get -y install zsh
 fi
 
@@ -21,13 +28,13 @@ fi
 
 #tmux setup
 echo "${green}Setting up tmux${reset}"
-ln -s ~/dotfiles/.tmux ~/.tmux
-ln -s ~/dotfiles/.tmux/.tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles/.tmux ~/.tmux
+ln -sf ~/dotfiles/.tmux/.tmux.conf ~/.tmux.conf
 ~/.tmux/plugins/tpm/bin/install_plugins
 ~/.tmux/plugins/tpm/bin/update_plugins all
 
 echo "${green}Setting up zsh${reset}"
-ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
 
 echo"${green}setting up VIM${reset}"
 ln -s ~/dotfiles/.vim ~/.vim
