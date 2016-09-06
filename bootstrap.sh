@@ -28,3 +28,7 @@ ln -s ~/dotfiles/.tmux/.tmux.conf ~/.tmux.conf
 
 echo "${green}Setting up zsh${reset}"
 ln -s ~/dotfiles/.zshrc ~/.zshrc
+
+echo"${green}setting up VIM${reset}"
+ln -s ~/dotfiles/.vim ~/.vim
+ln -s ~/dotfiles/.vimrc ~/.vimrc
