@@ -50,6 +50,7 @@ let g:syntastic_check_on_wq = 0
 " Airline config
 let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
+set t_Co=256
 
 " solarized color scheme
 syntax enable
