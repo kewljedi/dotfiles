@@ -40,3 +40,7 @@ echo "${green}setting up VIM${reset}"
 ln -sf ~/dotfiles/.vim ~/.vim
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 vi -c ':PlugInstall' -c ':q' -c ':q'
+
+echo "${green} setting up SSH ${reset}"
+ln -sf ~/dotfiles/ssh.config ~/.ssh/config
+chmod 400 ~/.ssh/config
