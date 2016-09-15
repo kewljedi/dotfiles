@@ -16,7 +16,7 @@ if [[ $os == "Linux" ]]; then
     sudo add-apt-repository -y ppa:pi-rho/dev
     sudo apt-get update
     sudo apt-get -y install tmux
-    
+
     sudo apt-get -y install zsh
 fi
 
@@ -36,6 +36,11 @@ ln -sf ~/dotfiles/.tmux/.tmux.conf ~/.tmux.conf
 echo "${green}Setting up zsh${reset}"
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 
-echo"${green}setting up VIM${reset}"
-ln -s ~/dotfiles/.vim ~/.vim
-ln -s ~/dotfiles/.vimrc ~/.vimrc
+echo "${green}setting up VIM${reset}"
+ln -sf ~/dotfiles/.vim ~/.vim
+ln -sf ~/dotfiles/.vimrc ~/.vimrc
+vi -c ':PlugInstall' -c ':q' -c ':q'
+
+echo "${green} setting up SSH ${reset}"
+ln -sf ~/dotfiles/ssh.config ~/.ssh/config
+chmod 400 ~/.ssh/config
