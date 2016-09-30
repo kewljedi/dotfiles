@@ -6,13 +6,13 @@ antigen use oh-my-zsh
 
 antigen bundle git
 
-antigen-bundle hlissner/zsh-autopair
+antigen bundle hlissner/zsh-autopair
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen bundle djui/alias-tips
 
-antigen-bundle horosgrisa/autoenv
+antigen bundle horosgrisa/autoenv
 
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 
@@ -45,7 +45,8 @@ then
     then
         export GNU_USERLAND=1
     fi
-else 
+    antigen bundle osx
+else
     antigen bundle joel-porquet/zsh-dircolors-solarized.git
     setupsolarized dircolors.ansi-dark
 fi
@@ -60,4 +61,4 @@ ggs () { cd ~/Documents/STTI/;cd "$*"; cd site }
 ba () { grunt build-artifacts;cd artifacts;npm install -production;grunt deploy:"$*" -deploy=true }
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-tmux attach -t init || tmux new -s init
+[ -z "$TMUX" ] && {  tmux attach -t init || exec tmux new -s init }

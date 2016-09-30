@@ -36,11 +36,12 @@ ln -sf ~/dotfiles/.tmux/.tmux.conf ~/.tmux.conf
 echo "${green}Setting up zsh${reset}"
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 
-echo "${green}setting up VIM${reset}"
+echo "${green}Setting up VIM${reset}"
 ln -sf ~/dotfiles/.vim ~/.vim
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 vi -c ':PlugInstall' -c ':q' -c ':q'
 
-echo "${green} setting up SSH ${reset}"
+echo "${green}Setting up SSH ${reset}"
 ln -sf ~/dotfiles/ssh.config ~/.ssh/config
+A
 chmod 400 ~/.ssh/config

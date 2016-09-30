@@ -1,1 +1,1 @@
-/home/dj/dotfiles/.tmux
+/Users/donaldperry/dotfiles/.tmux
